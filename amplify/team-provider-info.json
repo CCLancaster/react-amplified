@@ -1,0 +1,15 @@
+{
+  "hogwarts": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-reactamplify-hogwarts-130518-authRole",
+      "UnauthRoleArn": "arn:aws:iam::094278252722:role/amplify-reactamplify-hogwarts-130518-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::094278252722:role/amplify-reactamplify-hogwarts-130518-authRole",
+      "Region": "us-west-2",
+      "DeploymentBucketName": "amplify-reactamplify-hogwarts-130518-deployment",
+      "UnauthRoleName": "amplify-reactamplify-hogwarts-130518-unauthRole",
+      "StackName": "amplify-reactamplify-hogwarts-130518",
+      "StackId": "arn:aws:cloudformation:us-west-2:094278252722:stack/amplify-reactamplify-hogwarts-130518/c887e850-2073-11eb-9532-022108f33b95",
+      "AmplifyAppId": "d1e7at03ucybby"
+    }
+  }
+}
