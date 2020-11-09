@@ -10,6 +10,11 @@
       "StackName": "amplify-reactamplify-hogwarts-130518",
       "StackId": "arn:aws:cloudformation:us-west-2:094278252722:stack/amplify-reactamplify-hogwarts-130518/c887e850-2073-11eb-9532-022108f33b95",
       "AmplifyAppId": "d1e7at03ucybby"
+    },
+    "categories": {
+      "auth": {
+        "reactamplifyf0505d2f": {}
+      }
     }
   }
 }
