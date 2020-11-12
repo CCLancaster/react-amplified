@@ -3,3 +3,126 @@ type Todo @model {
   name: String!
   description: String
 }
+
+type AcademicYearStatus @model {
+  id: ID!
+  academicYear: AcademicYear
+  financialAidStatus: String
+  studentStatus: String
+}
+
+##################
+# ACADEMIC YEAR MODEL
+#################
+type AcademicYear @model {
+  id: ID!
+  year: String
+  isActive: Boolean
+}
+
+type Class @model {
+  id: ID!
+  academicYear: AcademicYear
+  quarter: String
+  classNumber: String
+  className: String
+  status: String
+  tuition: Int
+  fees: Int
+  awarded: Int
+  voucher: Int
+  undetermined: Int
+  invoice: Boolean
+  paid: Boolean
+  paidDate: String
+  reimbursed: Boolean
+  reimbursedDate: String
+  student: Student
+}
+
+type Document @model {
+  id: ID!
+  title: String
+  link: String
+  student: Student
+}
+
+type Note @model {
+  id: ID!
+  user: User
+  note: String
+  createdDate: String
+  bookmark: Boolean
+}
+
+type QuickLink @model {
+  id: ID!
+  title: String
+  link: String
+}
+
+type Student @model {
+  id: ID!
+  firstName: String
+  lastName: String
+  dateOfBirth: String
+  ubbId: String
+  docNum: Int
+  location: StudentLocationInput
+  runwayCohort: String
+  gpa: StudentGpaInput
+  race: String
+  fafsaReceived: Boolean
+  sentToAccounting: Boolean
+  readyToAward: Boolean
+  newStudent: Boolean
+  archiveStudent: Boolean
+  academicYearStatus: [AcademicYearStatus]
+  classes: [Class]
+  documents: [Document]
+  tasks: [Task]
+  notes: [Note]
+}
+
+type StudentGpaInput @model {
+  id: ID!
+  value: Float
+  asOfDate: String
+}
+
+type StudentLocationInput @model {
+  id: ID!
+  name: String
+  asOfDate: String
+}
+
+type StudentStatus @model {
+  id: ID!
+  title: String
+}
+
+type Task @model 
+  @key(name: "userTasks", fields: ["userId"]) {
+  id: ID
+  assignedDate: String
+  completed: Boolean
+  completedDate: String
+  detail: String
+  document: String
+  dueDate: String
+  flag: Boolean
+  studentId: String
+  userId: ID!
+}
+
+type User @model {
+  id: ID!
+  firstName: String!
+  lastName: String!
+  email: String!
+  admin: Boolean
+  avatar: String
+  color: String
+  token: String
+  tasks: [Task] @connection(keyName: "userTasks", fields: ["id"])
+}
