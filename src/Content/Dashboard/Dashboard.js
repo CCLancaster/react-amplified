@@ -20,12 +20,11 @@ const Dashboard = props => {
     let [loading, setLoading] = useState(true)
     let [error, setError] = useState(false)
     let [tasks, setTasks] = useState([])
-    let [incompleteTasks, setIncompleteTasks] = useState([])
-    let [assignedIncompleteTasks, setAssignedIncompleteTasks] = useState([])
 
     useEffect(() => {
         console.log("Dashboard useEffect Triggered.")
         queryTasks()
+        console.log('this is props.user ', props.user)
         //props.setActiveTab('Dashboard')
     }, [loading])
 
@@ -33,21 +32,23 @@ const Dashboard = props => {
     if (error) return <p> Error on Dashboard </p>
     if (loading) return <p >Loading... </p>
 
+    
+
     // Query the tasks
     async function queryTasks() {
         try {
-            console.log("About to query tasks.")
-            const tasksData = await API.graphql(graphqlOperation(listTasks))
+            console.log("About to query tasks.") 
+            const tasksData = await API.graphql(graphqlOperation(listTasks, {filter: {userID: {eq: props.user.id}}}))
+            console.log("Query Complete. Task Data:", tasksData)
             
-            console.log("Queried data.")
-            setTasks(tasksData.data.listTasks.items)
-            setLoading(false)
+            let incomTasks = tasksData.data.listTasks.items.filter(task => {
+                return !task.completed && task.userID === props.user.id
+            })
 
-            setIncompleteTasks(mapData(tasks.filter(task => !task.completed)))
-            setAssignedIncompleteTasks(incompleteTasks.filter(task => (task.userId === props.user._id)))
-            
-            console.log("Query Complete. Task Data:")
-            console.log(tasksData)
+            setTasks(mapData(incomTasks))
+
+            console.log("Incomplete Tasks:", tasks)
+            setLoading(false)
         } catch (err) { 
             console.log("Error fetching in Dashboard")
             console.log(err)
@@ -63,7 +64,7 @@ const Dashboard = props => {
                     <UserTasksCard
                         filter={"Assigned"}
                         status = {"Incomplete"}
-                        tasks = {assignedIncompleteTasks}
+                        tasks = {tasks}
                     />
                 </div>
                 <div className="student-status">    <StudentStatusCard/>    </div>
@@ -79,10 +80,11 @@ const Dashboard = props => {
 
 const mapData = (data) => {
     return data.map(d => {
-        console.log('Line 118', data)
+        console.log("mapData's (data) ", data)
+        console.log('data.d ', d)
         return {
             flag: d.flag ?  <FlagIcon style={{height: 30, width: 30}}/> : '',
-            userId: d.userId,
+            userId: d.userID,
             user:<Chip
                     size="small"
                     avatar={<Avatar>{d.user.avatar}</Avatar>}

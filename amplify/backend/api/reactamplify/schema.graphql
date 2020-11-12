@@ -4,8 +4,7 @@ type Todo @model {
   description: String
 }
 
-type AcademicYearStatus @model {
-  id: ID!
+type AcademicYearStatus {
   academicYear: AcademicYear
   financialAidStatus: String
   studentStatus: String
@@ -20,90 +19,114 @@ type AcademicYear @model {
   isActive: Boolean
 }
 
-type Class @model {
+#############
+# CLASS MODEL
+#############
+type Class @model @key(name: "studentClass", fields: ["studentID"]) {
   id: ID!
-  academicYear: AcademicYear
-  quarter: String
+  awarded: Int
   classNumber: String
   className: String
-  status: String
-  tuition: Int
   fees: Int
-  awarded: Int
-  voucher: Int
-  undetermined: Int
   invoice: Boolean
   paid: Boolean
   paidDate: String
+  quarter: String
   reimbursed: Boolean
   reimbursedDate: String
-  student: Student
+  status: String
+  tuition: Int
+  undetermined: Int
+  voucher: Int
+
+  studentID: ID
+  academicID: ID!
+  academicYear: AcademicYear @connection(fields:["academicID"])
 }
 
-type Document @model {
+
+################
+# DOCUMENT MODEL
+################
+type Document 
+  @model 
+  @key(name:"studentDocument", fields:["studentID"]) 
+{
   id: ID!
-  title: String
   link: String
-  student: Student
+  title: String
+  studentID: ID!
+  student: Student @connection(fields:["studentID"])
 }
 
-type Note @model {
+############
+# NOTE MODEL
+############
+type Note @model @key(name:"userNote", fields:["userID"]) @key(name:"studentNote", fields:["studentID"]) {
   id: ID!
-  user: User
-  note: String
-  createdDate: String
   bookmark: Boolean
+  createdDate: String
+  note: String
+
+  userID: ID!
+  studentID: ID!
+  user: User @connection(fields:["userID"])
+  student: Student @connection(fields:["studentID"])
 }
 
-type QuickLink @model {
+##################
+# QUICK LINK MODEL
+##################
+type QuickLink @model @key(name:"userQL", fields:["userID"]) {
   id: ID!
   title: String
   link: String
+
+  userID: ID
 }
 
+################
+# STUDENT MODELS
+################
 type Student @model {
   id: ID!
+  archiveStudent: Boolean
+  dateOfBirth: String
+  docNum: Int
+  fafsaReceived: Boolean
   firstName: String
   lastName: String
-  dateOfBirth: String
-  ubbId: String
-  docNum: Int
-  location: StudentLocationInput
-  runwayCohort: String
-  gpa: StudentGpaInput
-  race: String
-  fafsaReceived: Boolean
-  sentToAccounting: Boolean
-  readyToAward: Boolean
   newStudent: Boolean
-  archiveStudent: Boolean
+  race: String
+  readyToAward: Boolean
+  runwayCohort: String
+  sentToAccounting: Boolean
+  ubbId: String
   academicYearStatus: [AcademicYearStatus]
-  classes: [Class]
-  documents: [Document]
-  tasks: [Task]
-  notes: [Note]
+  gpa: StudentGpaInput
+  location: StudentLocationInput
+  
+  classes: [Class] @connection(keyName: "studentClass", fields: ["id"])
+  documents: [Document] @connection(keyName: "studentDocument", fields:["id"])
+  notes: [Note] @connection(keyName: "studentNote", fields:["id"])
+  tasks: [Task] @connection(keyName: "studentTask", fields:["id"])
 }
 
-type StudentGpaInput @model {
-  id: ID!
+type StudentGpaInput {
   value: Float
   asOfDate: String
 }
 
-type StudentLocationInput @model {
-  id: ID!
+type StudentLocationInput {
   name: String
   asOfDate: String
 }
 
-type StudentStatus @model {
+############
+# TASK MODEL
+############
+type Task @model @key(name:"studentTask", fields:["studentID"]) @key(name:"userTask", fields:["userID"]) {
   id: ID!
-  title: String
-}
-
-type Task @model 
-  @key(name: "userTasks", fields: ["userId"]) {
-  id: ID
   assignedDate: String
   completed: Boolean
   completedDate: String
@@ -111,18 +134,26 @@ type Task @model
   document: String
   dueDate: String
   flag: Boolean
-  studentId: String
-  userId: ID!
+  
+  studentID: ID!
+  student: Student @connection(fields:["studentID"])
+  userID: ID!
+  user: User @connection(fields:["userID"])
 }
 
+############
+# USER MODEL
+############
 type User @model {
   id: ID!
-  firstName: String!
-  lastName: String!
-  email: String!
   admin: Boolean
   avatar: String
+  email: String!
   color: String
+  firstName: String!
+  lastName: String!
   token: String
-  tasks: [Task] @connection(keyName: "userTasks", fields: ["id"])
+  notes: [Note] @connection(keyName:"userNote", fields:["id"])
+  quickLinks: [QuickLink] @connection(keyName:"userQL", fields:["id"])
+  tasks: [Task] @connection(keyName:"userTask", fields:["id"])
 }

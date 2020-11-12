@@ -30,53 +30,6 @@ export const listTodos = /* GraphQL */ `
     }
   }
 `;
-export const getAcademicYearStatus = /* GraphQL */ `
-  query GetAcademicYearStatus($id: ID!) {
-    getAcademicYearStatus(id: $id) {
-      id
-      academicYear {
-        id
-        year
-        isActive
-        createdAt
-        updatedAt
-      }
-      financialAidStatus
-      studentStatus
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const listAcademicYearStatuss = /* GraphQL */ `
-  query ListAcademicYearStatuss(
-    $filter: ModelAcademicYearStatusFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    listAcademicYearStatuss(
-      filter: $filter
-      limit: $limit
-      nextToken: $nextToken
-    ) {
-      items {
-        id
-        academicYear {
-          id
-          year
-          isActive
-          createdAt
-          updatedAt
-        }
-        financialAidStatus
-        studentStatus
-        createdAt
-        updatedAt
-      }
-      nextToken
-    }
-  }
-`;
 export const getAcademicYear = /* GraphQL */ `
   query GetAcademicYear($id: ID!) {
     getAcademicYear(id: $id) {
@@ -110,110 +63,26 @@ export const getClass = /* GraphQL */ `
   query GetClass($id: ID!) {
     getClass(id: $id) {
       id
+      awarded
+      classNumber
+      className
+      fees
+      invoice
+      paid
+      paidDate
+      quarter
+      reimbursed
+      reimbursedDate
+      status
+      tuition
+      undetermined
+      voucher
+      studentID
+      academicID
       academicYear {
         id
         year
         isActive
-        createdAt
-        updatedAt
-      }
-      quarter
-      classNumber
-      className
-      status
-      tuition
-      fees
-      awarded
-      voucher
-      undetermined
-      invoice
-      paid
-      paidDate
-      reimbursed
-      reimbursedDate
-      student {
-        id
-        firstName
-        lastName
-        dateOfBirth
-        ubbId
-        docNum
-        location {
-          id
-          name
-          asOfDate
-          createdAt
-          updatedAt
-        }
-        runwayCohort
-        gpa {
-          id
-          value
-          asOfDate
-          createdAt
-          updatedAt
-        }
-        race
-        fafsaReceived
-        sentToAccounting
-        readyToAward
-        newStudent
-        archiveStudent
-        academicYearStatus {
-          id
-          financialAidStatus
-          studentStatus
-          createdAt
-          updatedAt
-        }
-        classes {
-          id
-          quarter
-          classNumber
-          className
-          status
-          tuition
-          fees
-          awarded
-          voucher
-          undetermined
-          invoice
-          paid
-          paidDate
-          reimbursed
-          reimbursedDate
-          createdAt
-          updatedAt
-        }
-        documents {
-          id
-          title
-          link
-          createdAt
-          updatedAt
-        }
-        tasks {
-          id
-          assignedDate
-          completed
-          completedDate
-          detail
-          document
-          dueDate
-          flag
-          studentId
-          userId
-          createdAt
-          updatedAt
-        }
-        notes {
-          id
-          note
-          createdDate
-          bookmark
-          createdAt
-          updatedAt
-        }
         createdAt
         updatedAt
       }
@@ -231,41 +100,26 @@ export const listClasss = /* GraphQL */ `
     listClasss(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
+        awarded
+        classNumber
+        className
+        fees
+        invoice
+        paid
+        paidDate
+        quarter
+        reimbursed
+        reimbursedDate
+        status
+        tuition
+        undetermined
+        voucher
+        studentID
+        academicID
         academicYear {
           id
           year
           isActive
-          createdAt
-          updatedAt
-        }
-        quarter
-        classNumber
-        className
-        status
-        tuition
-        fees
-        awarded
-        voucher
-        undetermined
-        invoice
-        paid
-        paidDate
-        reimbursed
-        reimbursedDate
-        student {
-          id
-          firstName
-          lastName
-          dateOfBirth
-          ubbId
-          docNum
-          runwayCohort
-          race
-          fafsaReceived
-          sentToAccounting
-          readyToAward
-          newStudent
-          archiveStudent
           createdAt
           updatedAt
         }
@@ -280,90 +134,46 @@ export const getDocument = /* GraphQL */ `
   query GetDocument($id: ID!) {
     getDocument(id: $id) {
       id
-      title
       link
+      title
+      studentID
       student {
         id
+        archiveStudent
+        dateOfBirth
+        docNum
+        fafsaReceived
         firstName
         lastName
-        dateOfBirth
-        ubbId
-        docNum
-        location {
-          id
-          name
-          asOfDate
-          createdAt
-          updatedAt
-        }
-        runwayCohort
-        gpa {
-          id
-          value
-          asOfDate
-          createdAt
-          updatedAt
-        }
-        race
-        fafsaReceived
-        sentToAccounting
-        readyToAward
         newStudent
-        archiveStudent
+        race
+        readyToAward
+        runwayCohort
+        sentToAccounting
+        ubbId
         academicYearStatus {
-          id
           financialAidStatus
           studentStatus
-          createdAt
-          updatedAt
+        }
+        gpa {
+          value
+          asOfDate
+        }
+        location {
+          name
+          asOfDate
         }
         classes {
-          id
-          quarter
-          classNumber
-          className
-          status
-          tuition
-          fees
-          awarded
-          voucher
-          undetermined
-          invoice
-          paid
-          paidDate
-          reimbursed
-          reimbursedDate
-          createdAt
-          updatedAt
+          nextToken
         }
         documents {
-          id
-          title
-          link
-          createdAt
-          updatedAt
-        }
-        tasks {
-          id
-          assignedDate
-          completed
-          completedDate
-          detail
-          document
-          dueDate
-          flag
-          studentId
-          userId
-          createdAt
-          updatedAt
+          nextToken
         }
         notes {
-          id
-          note
-          createdDate
-          bookmark
-          createdAt
-          updatedAt
+          nextToken
+        }
+        tasks {
+          nextToken
         }
         createdAt
         updatedAt
@@ -382,22 +192,23 @@ export const listDocuments = /* GraphQL */ `
     listDocuments(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
-        title
         link
+        title
+        studentID
         student {
           id
+          archiveStudent
+          dateOfBirth
+          docNum
+          fafsaReceived
           firstName
           lastName
-          dateOfBirth
-          ubbId
-          docNum
-          runwayCohort
-          race
-          fafsaReceived
-          sentToAccounting
-          readyToAward
           newStudent
-          archiveStudent
+          race
+          readyToAward
+          runwayCohort
+          sentToAccounting
+          ubbId
           createdAt
           updatedAt
         }
@@ -412,24 +223,73 @@ export const getNote = /* GraphQL */ `
   query GetNote($id: ID!) {
     getNote(id: $id) {
       id
+      bookmark
+      createdDate
+      note
+      userID
+      studentID
       user {
         id
-        firstName
-        lastName
-        email
         admin
         avatar
+        email
         color
+        firstName
+        lastName
         token
+        notes {
+          nextToken
+        }
+        quickLinks {
+          nextToken
+        }
         tasks {
           nextToken
         }
         createdAt
         updatedAt
       }
-      note
-      createdDate
-      bookmark
+      student {
+        id
+        archiveStudent
+        dateOfBirth
+        docNum
+        fafsaReceived
+        firstName
+        lastName
+        newStudent
+        race
+        readyToAward
+        runwayCohort
+        sentToAccounting
+        ubbId
+        academicYearStatus {
+          financialAidStatus
+          studentStatus
+        }
+        gpa {
+          value
+          asOfDate
+        }
+        location {
+          name
+          asOfDate
+        }
+        classes {
+          nextToken
+        }
+        documents {
+          nextToken
+        }
+        notes {
+          nextToken
+        }
+        tasks {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
       createdAt
       updatedAt
     }
@@ -444,21 +304,40 @@ export const listNotes = /* GraphQL */ `
     listNotes(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
+        bookmark
+        createdDate
+        note
+        userID
+        studentID
         user {
           id
-          firstName
-          lastName
-          email
           admin
           avatar
+          email
           color
+          firstName
+          lastName
           token
           createdAt
           updatedAt
         }
-        note
-        createdDate
-        bookmark
+        student {
+          id
+          archiveStudent
+          dateOfBirth
+          docNum
+          fafsaReceived
+          firstName
+          lastName
+          newStudent
+          race
+          readyToAward
+          runwayCohort
+          sentToAccounting
+          ubbId
+          createdAt
+          updatedAt
+        }
         createdAt
         updatedAt
       }
@@ -472,6 +351,7 @@ export const getQuickLink = /* GraphQL */ `
       id
       title
       link
+      userID
       createdAt
       updatedAt
     }
@@ -488,6 +368,7 @@ export const listQuickLinks = /* GraphQL */ `
         id
         title
         link
+        userID
         createdAt
         updatedAt
       }
@@ -499,34 +380,19 @@ export const getStudent = /* GraphQL */ `
   query GetStudent($id: ID!) {
     getStudent(id: $id) {
       id
+      archiveStudent
+      dateOfBirth
+      docNum
+      fafsaReceived
       firstName
       lastName
-      dateOfBirth
-      ubbId
-      docNum
-      location {
-        id
-        name
-        asOfDate
-        createdAt
-        updatedAt
-      }
-      runwayCohort
-      gpa {
-        id
-        value
-        asOfDate
-        createdAt
-        updatedAt
-      }
-      race
-      fafsaReceived
-      sentToAccounting
-      readyToAward
       newStudent
-      archiveStudent
+      race
+      readyToAward
+      runwayCohort
+      sentToAccounting
+      ubbId
       academicYearStatus {
-        id
         academicYear {
           id
           year
@@ -536,109 +402,79 @@ export const getStudent = /* GraphQL */ `
         }
         financialAidStatus
         studentStatus
-        createdAt
-        updatedAt
+      }
+      gpa {
+        value
+        asOfDate
+      }
+      location {
+        name
+        asOfDate
       }
       classes {
-        id
-        academicYear {
+        items {
           id
-          year
-          isActive
+          awarded
+          classNumber
+          className
+          fees
+          invoice
+          paid
+          paidDate
+          quarter
+          reimbursed
+          reimbursedDate
+          status
+          tuition
+          undetermined
+          voucher
+          studentID
+          academicID
           createdAt
           updatedAt
         }
-        quarter
-        classNumber
-        className
-        status
-        tuition
-        fees
-        awarded
-        voucher
-        undetermined
-        invoice
-        paid
-        paidDate
-        reimbursed
-        reimbursedDate
-        student {
-          id
-          firstName
-          lastName
-          dateOfBirth
-          ubbId
-          docNum
-          runwayCohort
-          race
-          fafsaReceived
-          sentToAccounting
-          readyToAward
-          newStudent
-          archiveStudent
-          createdAt
-          updatedAt
-        }
-        createdAt
-        updatedAt
+        nextToken
       }
       documents {
-        id
-        title
-        link
-        student {
+        items {
           id
-          firstName
-          lastName
-          dateOfBirth
-          ubbId
-          docNum
-          runwayCohort
-          race
-          fafsaReceived
-          sentToAccounting
-          readyToAward
-          newStudent
-          archiveStudent
+          link
+          title
+          studentID
           createdAt
           updatedAt
         }
-        createdAt
-        updatedAt
-      }
-      tasks {
-        id
-        assignedDate
-        completed
-        completedDate
-        detail
-        document
-        dueDate
-        flag
-        studentId
-        userId
-        createdAt
-        updatedAt
+        nextToken
       }
       notes {
-        id
-        user {
+        items {
           id
-          firstName
-          lastName
-          email
-          admin
-          avatar
-          color
-          token
+          bookmark
+          createdDate
+          note
+          userID
+          studentID
           createdAt
           updatedAt
         }
-        note
-        createdDate
-        bookmark
-        createdAt
-        updatedAt
+        nextToken
+      }
+      tasks {
+        items {
+          id
+          assignedDate
+          completed
+          completedDate
+          detail
+          document
+          dueDate
+          flag
+          studentID
+          userID
+          createdAt
+          updatedAt
+        }
+        nextToken
       }
       createdAt
       updatedAt
@@ -654,180 +490,66 @@ export const listStudents = /* GraphQL */ `
     listStudents(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
+        archiveStudent
+        dateOfBirth
+        docNum
+        fafsaReceived
         firstName
         lastName
-        dateOfBirth
-        ubbId
-        docNum
-        location {
-          id
-          name
-          asOfDate
-          createdAt
-          updatedAt
-        }
-        runwayCohort
-        gpa {
-          id
-          value
-          asOfDate
-          createdAt
-          updatedAt
-        }
-        race
-        fafsaReceived
-        sentToAccounting
-        readyToAward
         newStudent
-        archiveStudent
+        race
+        readyToAward
+        runwayCohort
+        sentToAccounting
+        ubbId
         academicYearStatus {
-          id
           financialAidStatus
           studentStatus
-          createdAt
-          updatedAt
+        }
+        gpa {
+          value
+          asOfDate
+        }
+        location {
+          name
+          asOfDate
         }
         classes {
-          id
-          quarter
-          classNumber
-          className
-          status
-          tuition
-          fees
-          awarded
-          voucher
-          undetermined
-          invoice
-          paid
-          paidDate
-          reimbursed
-          reimbursedDate
-          createdAt
-          updatedAt
+          nextToken
         }
         documents {
-          id
-          title
-          link
-          createdAt
-          updatedAt
-        }
-        tasks {
-          id
-          assignedDate
-          completed
-          completedDate
-          detail
-          document
-          dueDate
-          flag
-          studentId
-          userId
-          createdAt
-          updatedAt
+          nextToken
         }
         notes {
-          id
-          note
-          createdDate
-          bookmark
-          createdAt
-          updatedAt
+          items {
+            id
+            bookmark
+            createdDate
+            note
+            userID
+            studentID
+            createdAt
+            updatedAt
+          }
+          nextToken
         }
-        createdAt
-        updatedAt
-      }
-      nextToken
-    }
-  }
-`;
-export const getStudentGpaInput = /* GraphQL */ `
-  query GetStudentGpaInput($id: ID!) {
-    getStudentGpaInput(id: $id) {
-      id
-      value
-      asOfDate
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const listStudentGpaInputs = /* GraphQL */ `
-  query ListStudentGpaInputs(
-    $filter: ModelStudentGpaInputFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    listStudentGpaInputs(
-      filter: $filter
-      limit: $limit
-      nextToken: $nextToken
-    ) {
-      items {
-        id
-        value
-        asOfDate
-        createdAt
-        updatedAt
-      }
-      nextToken
-    }
-  }
-`;
-export const getStudentLocationInput = /* GraphQL */ `
-  query GetStudentLocationInput($id: ID!) {
-    getStudentLocationInput(id: $id) {
-      id
-      name
-      asOfDate
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const listStudentLocationInputs = /* GraphQL */ `
-  query ListStudentLocationInputs(
-    $filter: ModelStudentLocationInputFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    listStudentLocationInputs(
-      filter: $filter
-      limit: $limit
-      nextToken: $nextToken
-    ) {
-      items {
-        id
-        name
-        asOfDate
-        createdAt
-        updatedAt
-      }
-      nextToken
-    }
-  }
-`;
-export const getStudentStatus = /* GraphQL */ `
-  query GetStudentStatus($id: ID!) {
-    getStudentStatus(id: $id) {
-      id
-      title
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const listStudentStatuss = /* GraphQL */ `
-  query ListStudentStatuss(
-    $filter: ModelStudentStatusFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    listStudentStatuss(filter: $filter, limit: $limit, nextToken: $nextToken) {
-      items {
-        id
-        title
+        tasks {
+          items {
+            id
+            assignedDate
+            completed
+            completedDate
+            detail
+            document
+            dueDate
+            flag
+            studentID
+            userID
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
         createdAt
         updatedAt
       }
@@ -846,8 +568,70 @@ export const getTask = /* GraphQL */ `
       document
       dueDate
       flag
-      studentId
-      userId
+      studentID
+      student {
+        id
+        archiveStudent
+        dateOfBirth
+        docNum
+        fafsaReceived
+        firstName
+        lastName
+        newStudent
+        race
+        readyToAward
+        runwayCohort
+        sentToAccounting
+        ubbId
+        academicYearStatus {
+          financialAidStatus
+          studentStatus
+        }
+        gpa {
+          value
+          asOfDate
+        }
+        location {
+          name
+          asOfDate
+        }
+        classes {
+          nextToken
+        }
+        documents {
+          nextToken
+        }
+        notes {
+          nextToken
+        }
+        tasks {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      userID
+      user {
+        id
+        admin
+        avatar
+        email
+        color
+        firstName
+        lastName
+        token
+        notes {
+          nextToken
+        }
+        quickLinks {
+          nextToken
+        }
+        tasks {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
       createdAt
       updatedAt
     }
@@ -869,8 +653,37 @@ export const listTasks = /* GraphQL */ `
         document
         dueDate
         flag
-        studentId
-        userId
+        studentID
+        student {
+          id
+          archiveStudent
+          dateOfBirth
+          docNum
+          fafsaReceived
+          firstName
+          lastName
+          newStudent
+          race
+          readyToAward
+          runwayCohort
+          sentToAccounting
+          ubbId
+          createdAt
+          updatedAt
+        }
+        userID
+        user {
+          id
+          admin
+          avatar
+          email
+          color
+          firstName
+          lastName
+          token
+          createdAt
+          updatedAt
+        }
         createdAt
         updatedAt
       }
@@ -882,13 +695,37 @@ export const getUser = /* GraphQL */ `
   query GetUser($id: ID!) {
     getUser(id: $id) {
       id
-      firstName
-      lastName
-      email
       admin
       avatar
+      email
       color
+      firstName
+      lastName
       token
+      notes {
+        items {
+          id
+          bookmark
+          createdDate
+          note
+          userID
+          studentID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      quickLinks {
+        items {
+          id
+          title
+          link
+          userID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       tasks {
         items {
           id
@@ -899,8 +736,8 @@ export const getUser = /* GraphQL */ `
           document
           dueDate
           flag
-          studentId
-          userId
+          studentID
+          userID
           createdAt
           updatedAt
         }
@@ -920,13 +757,19 @@ export const listUsers = /* GraphQL */ `
     listUsers(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
-        firstName
-        lastName
-        email
         admin
         avatar
+        email
         color
+        firstName
+        lastName
         token
+        notes {
+          nextToken
+        }
+        quickLinks {
+          nextToken
+        }
         tasks {
           nextToken
         }

@@ -34,60 +34,6 @@ export const onDeleteTodo = /* GraphQL */ `
     }
   }
 `;
-export const onCreateAcademicYearStatus = /* GraphQL */ `
-  subscription OnCreateAcademicYearStatus {
-    onCreateAcademicYearStatus {
-      id
-      academicYear {
-        id
-        year
-        isActive
-        createdAt
-        updatedAt
-      }
-      financialAidStatus
-      studentStatus
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const onUpdateAcademicYearStatus = /* GraphQL */ `
-  subscription OnUpdateAcademicYearStatus {
-    onUpdateAcademicYearStatus {
-      id
-      academicYear {
-        id
-        year
-        isActive
-        createdAt
-        updatedAt
-      }
-      financialAidStatus
-      studentStatus
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const onDeleteAcademicYearStatus = /* GraphQL */ `
-  subscription OnDeleteAcademicYearStatus {
-    onDeleteAcademicYearStatus {
-      id
-      academicYear {
-        id
-        year
-        isActive
-        createdAt
-        updatedAt
-      }
-      financialAidStatus
-      studentStatus
-      createdAt
-      updatedAt
-    }
-  }
-`;
 export const onCreateAcademicYear = /* GraphQL */ `
   subscription OnCreateAcademicYear {
     onCreateAcademicYear {
@@ -125,110 +71,26 @@ export const onCreateClass = /* GraphQL */ `
   subscription OnCreateClass {
     onCreateClass {
       id
+      awarded
+      classNumber
+      className
+      fees
+      invoice
+      paid
+      paidDate
+      quarter
+      reimbursed
+      reimbursedDate
+      status
+      tuition
+      undetermined
+      voucher
+      studentID
+      academicID
       academicYear {
         id
         year
         isActive
-        createdAt
-        updatedAt
-      }
-      quarter
-      classNumber
-      className
-      status
-      tuition
-      fees
-      awarded
-      voucher
-      undetermined
-      invoice
-      paid
-      paidDate
-      reimbursed
-      reimbursedDate
-      student {
-        id
-        firstName
-        lastName
-        dateOfBirth
-        ubbId
-        docNum
-        location {
-          id
-          name
-          asOfDate
-          createdAt
-          updatedAt
-        }
-        runwayCohort
-        gpa {
-          id
-          value
-          asOfDate
-          createdAt
-          updatedAt
-        }
-        race
-        fafsaReceived
-        sentToAccounting
-        readyToAward
-        newStudent
-        archiveStudent
-        academicYearStatus {
-          id
-          financialAidStatus
-          studentStatus
-          createdAt
-          updatedAt
-        }
-        classes {
-          id
-          quarter
-          classNumber
-          className
-          status
-          tuition
-          fees
-          awarded
-          voucher
-          undetermined
-          invoice
-          paid
-          paidDate
-          reimbursed
-          reimbursedDate
-          createdAt
-          updatedAt
-        }
-        documents {
-          id
-          title
-          link
-          createdAt
-          updatedAt
-        }
-        tasks {
-          id
-          assignedDate
-          completed
-          completedDate
-          detail
-          document
-          dueDate
-          flag
-          studentId
-          userId
-          createdAt
-          updatedAt
-        }
-        notes {
-          id
-          note
-          createdDate
-          bookmark
-          createdAt
-          updatedAt
-        }
         createdAt
         updatedAt
       }
@@ -241,110 +103,26 @@ export const onUpdateClass = /* GraphQL */ `
   subscription OnUpdateClass {
     onUpdateClass {
       id
+      awarded
+      classNumber
+      className
+      fees
+      invoice
+      paid
+      paidDate
+      quarter
+      reimbursed
+      reimbursedDate
+      status
+      tuition
+      undetermined
+      voucher
+      studentID
+      academicID
       academicYear {
         id
         year
         isActive
-        createdAt
-        updatedAt
-      }
-      quarter
-      classNumber
-      className
-      status
-      tuition
-      fees
-      awarded
-      voucher
-      undetermined
-      invoice
-      paid
-      paidDate
-      reimbursed
-      reimbursedDate
-      student {
-        id
-        firstName
-        lastName
-        dateOfBirth
-        ubbId
-        docNum
-        location {
-          id
-          name
-          asOfDate
-          createdAt
-          updatedAt
-        }
-        runwayCohort
-        gpa {
-          id
-          value
-          asOfDate
-          createdAt
-          updatedAt
-        }
-        race
-        fafsaReceived
-        sentToAccounting
-        readyToAward
-        newStudent
-        archiveStudent
-        academicYearStatus {
-          id
-          financialAidStatus
-          studentStatus
-          createdAt
-          updatedAt
-        }
-        classes {
-          id
-          quarter
-          classNumber
-          className
-          status
-          tuition
-          fees
-          awarded
-          voucher
-          undetermined
-          invoice
-          paid
-          paidDate
-          reimbursed
-          reimbursedDate
-          createdAt
-          updatedAt
-        }
-        documents {
-          id
-          title
-          link
-          createdAt
-          updatedAt
-        }
-        tasks {
-          id
-          assignedDate
-          completed
-          completedDate
-          detail
-          document
-          dueDate
-          flag
-          studentId
-          userId
-          createdAt
-          updatedAt
-        }
-        notes {
-          id
-          note
-          createdDate
-          bookmark
-          createdAt
-          updatedAt
-        }
         createdAt
         updatedAt
       }
@@ -357,110 +135,26 @@ export const onDeleteClass = /* GraphQL */ `
   subscription OnDeleteClass {
     onDeleteClass {
       id
+      awarded
+      classNumber
+      className
+      fees
+      invoice
+      paid
+      paidDate
+      quarter
+      reimbursed
+      reimbursedDate
+      status
+      tuition
+      undetermined
+      voucher
+      studentID
+      academicID
       academicYear {
         id
         year
         isActive
-        createdAt
-        updatedAt
-      }
-      quarter
-      classNumber
-      className
-      status
-      tuition
-      fees
-      awarded
-      voucher
-      undetermined
-      invoice
-      paid
-      paidDate
-      reimbursed
-      reimbursedDate
-      student {
-        id
-        firstName
-        lastName
-        dateOfBirth
-        ubbId
-        docNum
-        location {
-          id
-          name
-          asOfDate
-          createdAt
-          updatedAt
-        }
-        runwayCohort
-        gpa {
-          id
-          value
-          asOfDate
-          createdAt
-          updatedAt
-        }
-        race
-        fafsaReceived
-        sentToAccounting
-        readyToAward
-        newStudent
-        archiveStudent
-        academicYearStatus {
-          id
-          financialAidStatus
-          studentStatus
-          createdAt
-          updatedAt
-        }
-        classes {
-          id
-          quarter
-          classNumber
-          className
-          status
-          tuition
-          fees
-          awarded
-          voucher
-          undetermined
-          invoice
-          paid
-          paidDate
-          reimbursed
-          reimbursedDate
-          createdAt
-          updatedAt
-        }
-        documents {
-          id
-          title
-          link
-          createdAt
-          updatedAt
-        }
-        tasks {
-          id
-          assignedDate
-          completed
-          completedDate
-          detail
-          document
-          dueDate
-          flag
-          studentId
-          userId
-          createdAt
-          updatedAt
-        }
-        notes {
-          id
-          note
-          createdDate
-          bookmark
-          createdAt
-          updatedAt
-        }
         createdAt
         updatedAt
       }
@@ -473,90 +167,46 @@ export const onCreateDocument = /* GraphQL */ `
   subscription OnCreateDocument {
     onCreateDocument {
       id
-      title
       link
+      title
+      studentID
       student {
         id
+        archiveStudent
+        dateOfBirth
+        docNum
+        fafsaReceived
         firstName
         lastName
-        dateOfBirth
-        ubbId
-        docNum
-        location {
-          id
-          name
-          asOfDate
-          createdAt
-          updatedAt
-        }
-        runwayCohort
-        gpa {
-          id
-          value
-          asOfDate
-          createdAt
-          updatedAt
-        }
-        race
-        fafsaReceived
-        sentToAccounting
-        readyToAward
         newStudent
-        archiveStudent
+        race
+        readyToAward
+        runwayCohort
+        sentToAccounting
+        ubbId
         academicYearStatus {
-          id
           financialAidStatus
           studentStatus
-          createdAt
-          updatedAt
+        }
+        gpa {
+          value
+          asOfDate
+        }
+        location {
+          name
+          asOfDate
         }
         classes {
-          id
-          quarter
-          classNumber
-          className
-          status
-          tuition
-          fees
-          awarded
-          voucher
-          undetermined
-          invoice
-          paid
-          paidDate
-          reimbursed
-          reimbursedDate
-          createdAt
-          updatedAt
+          nextToken
         }
         documents {
-          id
-          title
-          link
-          createdAt
-          updatedAt
-        }
-        tasks {
-          id
-          assignedDate
-          completed
-          completedDate
-          detail
-          document
-          dueDate
-          flag
-          studentId
-          userId
-          createdAt
-          updatedAt
+          nextToken
         }
         notes {
-          id
-          note
-          createdDate
-          bookmark
-          createdAt
-          updatedAt
+          nextToken
+        }
+        tasks {
+          nextToken
         }
         createdAt
         updatedAt
@@ -570,90 +220,46 @@ export const onUpdateDocument = /* GraphQL */ `
   subscription OnUpdateDocument {
     onUpdateDocument {
       id
-      title
       link
+      title
+      studentID
       student {
         id
+        archiveStudent
+        dateOfBirth
+        docNum
+        fafsaReceived
         firstName
         lastName
-        dateOfBirth
-        ubbId
-        docNum
-        location {
-          id
-          name
-          asOfDate
-          createdAt
-          updatedAt
-        }
-        runwayCohort
-        gpa {
-          id
-          value
-          asOfDate
-          createdAt
-          updatedAt
-        }
-        race
-        fafsaReceived
-        sentToAccounting
-        readyToAward
         newStudent
-        archiveStudent
+        race
+        readyToAward
+        runwayCohort
+        sentToAccounting
+        ubbId
         academicYearStatus {
-          id
           financialAidStatus
           studentStatus
-          createdAt
-          updatedAt
+        }
+        gpa {
+          value
+          asOfDate
+        }
+        location {
+          name
+          asOfDate
         }
         classes {
-          id
-          quarter
-          classNumber
-          className
-          status
-          tuition
-          fees
-          awarded
-          voucher
-          undetermined
-          invoice
-          paid
-          paidDate
-          reimbursed
-          reimbursedDate
-          createdAt
-          updatedAt
+          nextToken
         }
         documents {
-          id
-          title
-          link
-          createdAt
-          updatedAt
-        }
-        tasks {
-          id
-          assignedDate
-          completed
-          completedDate
-          detail
-          document
-          dueDate
-          flag
-          studentId
-          userId
-          createdAt
-          updatedAt
+          nextToken
         }
         notes {
-          id
-          note
-          createdDate
-          bookmark
-          createdAt
-          updatedAt
+          nextToken
+        }
+        tasks {
+          nextToken
         }
         createdAt
         updatedAt
@@ -667,90 +273,46 @@ export const onDeleteDocument = /* GraphQL */ `
   subscription OnDeleteDocument {
     onDeleteDocument {
       id
-      title
       link
+      title
+      studentID
       student {
         id
+        archiveStudent
+        dateOfBirth
+        docNum
+        fafsaReceived
         firstName
         lastName
-        dateOfBirth
-        ubbId
-        docNum
-        location {
-          id
-          name
-          asOfDate
-          createdAt
-          updatedAt
-        }
-        runwayCohort
-        gpa {
-          id
-          value
-          asOfDate
-          createdAt
-          updatedAt
-        }
-        race
-        fafsaReceived
-        sentToAccounting
-        readyToAward
         newStudent
-        archiveStudent
+        race
+        readyToAward
+        runwayCohort
+        sentToAccounting
+        ubbId
         academicYearStatus {
-          id
           financialAidStatus
           studentStatus
-          createdAt
-          updatedAt
+        }
+        gpa {
+          value
+          asOfDate
+        }
+        location {
+          name
+          asOfDate
         }
         classes {
-          id
-          quarter
-          classNumber
-          className
-          status
-          tuition
-          fees
-          awarded
-          voucher
-          undetermined
-          invoice
-          paid
-          paidDate
-          reimbursed
-          reimbursedDate
-          createdAt
-          updatedAt
+          nextToken
         }
         documents {
-          id
-          title
-          link
-          createdAt
-          updatedAt
-        }
-        tasks {
-          id
-          assignedDate
-          completed
-          completedDate
-          detail
-          document
-          dueDate
-          flag
-          studentId
-          userId
-          createdAt
-          updatedAt
+          nextToken
         }
         notes {
-          id
-          note
-          createdDate
-          bookmark
-          createdAt
-          updatedAt
+          nextToken
+        }
+        tasks {
+          nextToken
         }
         createdAt
         updatedAt
@@ -764,24 +326,73 @@ export const onCreateNote = /* GraphQL */ `
   subscription OnCreateNote {
     onCreateNote {
       id
+      bookmark
+      createdDate
+      note
+      userID
+      studentID
       user {
         id
-        firstName
-        lastName
-        email
         admin
         avatar
+        email
         color
+        firstName
+        lastName
         token
+        notes {
+          nextToken
+        }
+        quickLinks {
+          nextToken
+        }
         tasks {
           nextToken
         }
         createdAt
         updatedAt
       }
-      note
-      createdDate
-      bookmark
+      student {
+        id
+        archiveStudent
+        dateOfBirth
+        docNum
+        fafsaReceived
+        firstName
+        lastName
+        newStudent
+        race
+        readyToAward
+        runwayCohort
+        sentToAccounting
+        ubbId
+        academicYearStatus {
+          financialAidStatus
+          studentStatus
+        }
+        gpa {
+          value
+          asOfDate
+        }
+        location {
+          name
+          asOfDate
+        }
+        classes {
+          nextToken
+        }
+        documents {
+          nextToken
+        }
+        notes {
+          nextToken
+        }
+        tasks {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
       createdAt
       updatedAt
     }
@@ -791,24 +402,73 @@ export const onUpdateNote = /* GraphQL */ `
   subscription OnUpdateNote {
     onUpdateNote {
       id
+      bookmark
+      createdDate
+      note
+      userID
+      studentID
       user {
         id
-        firstName
-        lastName
-        email
         admin
         avatar
+        email
         color
+        firstName
+        lastName
         token
+        notes {
+          nextToken
+        }
+        quickLinks {
+          nextToken
+        }
         tasks {
           nextToken
         }
         createdAt
         updatedAt
       }
-      note
-      createdDate
-      bookmark
+      student {
+        id
+        archiveStudent
+        dateOfBirth
+        docNum
+        fafsaReceived
+        firstName
+        lastName
+        newStudent
+        race
+        readyToAward
+        runwayCohort
+        sentToAccounting
+        ubbId
+        academicYearStatus {
+          financialAidStatus
+          studentStatus
+        }
+        gpa {
+          value
+          asOfDate
+        }
+        location {
+          name
+          asOfDate
+        }
+        classes {
+          nextToken
+        }
+        documents {
+          nextToken
+        }
+        notes {
+          nextToken
+        }
+        tasks {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
       createdAt
       updatedAt
     }
@@ -818,24 +478,73 @@ export const onDeleteNote = /* GraphQL */ `
   subscription OnDeleteNote {
     onDeleteNote {
       id
+      bookmark
+      createdDate
+      note
+      userID
+      studentID
       user {
         id
-        firstName
-        lastName
-        email
         admin
         avatar
+        email
         color
+        firstName
+        lastName
         token
+        notes {
+          nextToken
+        }
+        quickLinks {
+          nextToken
+        }
         tasks {
           nextToken
         }
         createdAt
         updatedAt
       }
-      note
-      createdDate
-      bookmark
+      student {
+        id
+        archiveStudent
+        dateOfBirth
+        docNum
+        fafsaReceived
+        firstName
+        lastName
+        newStudent
+        race
+        readyToAward
+        runwayCohort
+        sentToAccounting
+        ubbId
+        academicYearStatus {
+          financialAidStatus
+          studentStatus
+        }
+        gpa {
+          value
+          asOfDate
+        }
+        location {
+          name
+          asOfDate
+        }
+        classes {
+          nextToken
+        }
+        documents {
+          nextToken
+        }
+        notes {
+          nextToken
+        }
+        tasks {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
       createdAt
       updatedAt
     }
@@ -847,6 +556,7 @@ export const onCreateQuickLink = /* GraphQL */ `
       id
       title
       link
+      userID
       createdAt
       updatedAt
     }
@@ -858,6 +568,7 @@ export const onUpdateQuickLink = /* GraphQL */ `
       id
       title
       link
+      userID
       createdAt
       updatedAt
     }
@@ -869,6 +580,7 @@ export const onDeleteQuickLink = /* GraphQL */ `
       id
       title
       link
+      userID
       createdAt
       updatedAt
     }
@@ -878,34 +590,19 @@ export const onCreateStudent = /* GraphQL */ `
   subscription OnCreateStudent {
     onCreateStudent {
       id
+      archiveStudent
+      dateOfBirth
+      docNum
+      fafsaReceived
       firstName
       lastName
-      dateOfBirth
-      ubbId
-      docNum
-      location {
-        id
-        name
-        asOfDate
-        createdAt
-        updatedAt
-      }
-      runwayCohort
-      gpa {
-        id
-        value
-        asOfDate
-        createdAt
-        updatedAt
-      }
-      race
-      fafsaReceived
-      sentToAccounting
-      readyToAward
       newStudent
-      archiveStudent
+      race
+      readyToAward
+      runwayCohort
+      sentToAccounting
+      ubbId
       academicYearStatus {
-        id
         academicYear {
           id
           year
@@ -915,109 +612,79 @@ export const onCreateStudent = /* GraphQL */ `
         }
         financialAidStatus
         studentStatus
-        createdAt
-        updatedAt
+      }
+      gpa {
+        value
+        asOfDate
+      }
+      location {
+        name
+        asOfDate
       }
       classes {
-        id
-        academicYear {
+        items {
           id
-          year
-          isActive
+          awarded
+          classNumber
+          className
+          fees
+          invoice
+          paid
+          paidDate
+          quarter
+          reimbursed
+          reimbursedDate
+          status
+          tuition
+          undetermined
+          voucher
+          studentID
+          academicID
           createdAt
           updatedAt
         }
-        quarter
-        classNumber
-        className
-        status
-        tuition
-        fees
-        awarded
-        voucher
-        undetermined
-        invoice
-        paid
-        paidDate
-        reimbursed
-        reimbursedDate
-        student {
-          id
-          firstName
-          lastName
-          dateOfBirth
-          ubbId
-          docNum
-          runwayCohort
-          race
-          fafsaReceived
-          sentToAccounting
-          readyToAward
-          newStudent
-          archiveStudent
-          createdAt
-          updatedAt
-        }
-        createdAt
-        updatedAt
+        nextToken
       }
       documents {
-        id
-        title
-        link
-        student {
+        items {
           id
-          firstName
-          lastName
-          dateOfBirth
-          ubbId
-          docNum
-          runwayCohort
-          race
-          fafsaReceived
-          sentToAccounting
-          readyToAward
-          newStudent
-          archiveStudent
+          link
+          title
+          studentID
           createdAt
           updatedAt
         }
-        createdAt
-        updatedAt
-      }
-      tasks {
-        id
-        assignedDate
-        completed
-        completedDate
-        detail
-        document
-        dueDate
-        flag
-        studentId
-        userId
-        createdAt
-        updatedAt
+        nextToken
       }
       notes {
-        id
-        user {
+        items {
           id
-          firstName
-          lastName
-          email
-          admin
-          avatar
-          color
-          token
+          bookmark
+          createdDate
+          note
+          userID
+          studentID
           createdAt
           updatedAt
         }
-        note
-        createdDate
-        bookmark
-        createdAt
-        updatedAt
+        nextToken
+      }
+      tasks {
+        items {
+          id
+          assignedDate
+          completed
+          completedDate
+          detail
+          document
+          dueDate
+          flag
+          studentID
+          userID
+          createdAt
+          updatedAt
+        }
+        nextToken
       }
       createdAt
       updatedAt
@@ -1028,34 +695,19 @@ export const onUpdateStudent = /* GraphQL */ `
   subscription OnUpdateStudent {
     onUpdateStudent {
       id
+      archiveStudent
+      dateOfBirth
+      docNum
+      fafsaReceived
       firstName
       lastName
-      dateOfBirth
-      ubbId
-      docNum
-      location {
-        id
-        name
-        asOfDate
-        createdAt
-        updatedAt
-      }
-      runwayCohort
-      gpa {
-        id
-        value
-        asOfDate
-        createdAt
-        updatedAt
-      }
-      race
-      fafsaReceived
-      sentToAccounting
-      readyToAward
       newStudent
-      archiveStudent
+      race
+      readyToAward
+      runwayCohort
+      sentToAccounting
+      ubbId
       academicYearStatus {
-        id
         academicYear {
           id
           year
@@ -1065,109 +717,79 @@ export const onUpdateStudent = /* GraphQL */ `
         }
         financialAidStatus
         studentStatus
-        createdAt
-        updatedAt
+      }
+      gpa {
+        value
+        asOfDate
+      }
+      location {
+        name
+        asOfDate
       }
       classes {
-        id
-        academicYear {
+        items {
           id
-          year
-          isActive
+          awarded
+          classNumber
+          className
+          fees
+          invoice
+          paid
+          paidDate
+          quarter
+          reimbursed
+          reimbursedDate
+          status
+          tuition
+          undetermined
+          voucher
+          studentID
+          academicID
           createdAt
           updatedAt
         }
-        quarter
-        classNumber
-        className
-        status
-        tuition
-        fees
-        awarded
-        voucher
-        undetermined
-        invoice
-        paid
-        paidDate
-        reimbursed
-        reimbursedDate
-        student {
-          id
-          firstName
-          lastName
-          dateOfBirth
-          ubbId
-          docNum
-          runwayCohort
-          race
-          fafsaReceived
-          sentToAccounting
-          readyToAward
-          newStudent
-          archiveStudent
-          createdAt
-          updatedAt
-        }
-        createdAt
-        updatedAt
+        nextToken
       }
       documents {
-        id
-        title
-        link
-        student {
+        items {
           id
-          firstName
-          lastName
-          dateOfBirth
-          ubbId
-          docNum
-          runwayCohort
-          race
-          fafsaReceived
-          sentToAccounting
-          readyToAward
-          newStudent
-          archiveStudent
+          link
+          title
+          studentID
           createdAt
           updatedAt
         }
-        createdAt
-        updatedAt
-      }
-      tasks {
-        id
-        assignedDate
-        completed
-        completedDate
-        detail
-        document
-        dueDate
-        flag
-        studentId
-        userId
-        createdAt
-        updatedAt
+        nextToken
       }
       notes {
-        id
-        user {
+        items {
           id
-          firstName
-          lastName
-          email
-          admin
-          avatar
-          color
-          token
+          bookmark
+          createdDate
+          note
+          userID
+          studentID
           createdAt
           updatedAt
         }
-        note
-        createdDate
-        bookmark
-        createdAt
-        updatedAt
+        nextToken
+      }
+      tasks {
+        items {
+          id
+          assignedDate
+          completed
+          completedDate
+          detail
+          document
+          dueDate
+          flag
+          studentID
+          userID
+          createdAt
+          updatedAt
+        }
+        nextToken
       }
       createdAt
       updatedAt
@@ -1178,34 +800,19 @@ export const onDeleteStudent = /* GraphQL */ `
   subscription OnDeleteStudent {
     onDeleteStudent {
       id
+      archiveStudent
+      dateOfBirth
+      docNum
+      fafsaReceived
       firstName
       lastName
-      dateOfBirth
-      ubbId
-      docNum
-      location {
-        id
-        name
-        asOfDate
-        createdAt
-        updatedAt
-      }
-      runwayCohort
-      gpa {
-        id
-        value
-        asOfDate
-        createdAt
-        updatedAt
-      }
-      race
-      fafsaReceived
-      sentToAccounting
-      readyToAward
       newStudent
-      archiveStudent
+      race
+      readyToAward
+      runwayCohort
+      sentToAccounting
+      ubbId
       academicYearStatus {
-        id
         academicYear {
           id
           year
@@ -1215,206 +822,80 @@ export const onDeleteStudent = /* GraphQL */ `
         }
         financialAidStatus
         studentStatus
-        createdAt
-        updatedAt
+      }
+      gpa {
+        value
+        asOfDate
+      }
+      location {
+        name
+        asOfDate
       }
       classes {
-        id
-        academicYear {
+        items {
           id
-          year
-          isActive
+          awarded
+          classNumber
+          className
+          fees
+          invoice
+          paid
+          paidDate
+          quarter
+          reimbursed
+          reimbursedDate
+          status
+          tuition
+          undetermined
+          voucher
+          studentID
+          academicID
           createdAt
           updatedAt
         }
-        quarter
-        classNumber
-        className
-        status
-        tuition
-        fees
-        awarded
-        voucher
-        undetermined
-        invoice
-        paid
-        paidDate
-        reimbursed
-        reimbursedDate
-        student {
-          id
-          firstName
-          lastName
-          dateOfBirth
-          ubbId
-          docNum
-          runwayCohort
-          race
-          fafsaReceived
-          sentToAccounting
-          readyToAward
-          newStudent
-          archiveStudent
-          createdAt
-          updatedAt
-        }
-        createdAt
-        updatedAt
+        nextToken
       }
       documents {
-        id
-        title
-        link
-        student {
+        items {
           id
-          firstName
-          lastName
-          dateOfBirth
-          ubbId
-          docNum
-          runwayCohort
-          race
-          fafsaReceived
-          sentToAccounting
-          readyToAward
-          newStudent
-          archiveStudent
+          link
+          title
+          studentID
           createdAt
           updatedAt
         }
-        createdAt
-        updatedAt
-      }
-      tasks {
-        id
-        assignedDate
-        completed
-        completedDate
-        detail
-        document
-        dueDate
-        flag
-        studentId
-        userId
-        createdAt
-        updatedAt
+        nextToken
       }
       notes {
-        id
-        user {
+        items {
           id
-          firstName
-          lastName
-          email
-          admin
-          avatar
-          color
-          token
+          bookmark
+          createdDate
+          note
+          userID
+          studentID
           createdAt
           updatedAt
         }
-        note
-        createdDate
-        bookmark
-        createdAt
-        updatedAt
+        nextToken
       }
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const onCreateStudentGpaInput = /* GraphQL */ `
-  subscription OnCreateStudentGpaInput {
-    onCreateStudentGpaInput {
-      id
-      value
-      asOfDate
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const onUpdateStudentGpaInput = /* GraphQL */ `
-  subscription OnUpdateStudentGpaInput {
-    onUpdateStudentGpaInput {
-      id
-      value
-      asOfDate
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const onDeleteStudentGpaInput = /* GraphQL */ `
-  subscription OnDeleteStudentGpaInput {
-    onDeleteStudentGpaInput {
-      id
-      value
-      asOfDate
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const onCreateStudentLocationInput = /* GraphQL */ `
-  subscription OnCreateStudentLocationInput {
-    onCreateStudentLocationInput {
-      id
-      name
-      asOfDate
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const onUpdateStudentLocationInput = /* GraphQL */ `
-  subscription OnUpdateStudentLocationInput {
-    onUpdateStudentLocationInput {
-      id
-      name
-      asOfDate
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const onDeleteStudentLocationInput = /* GraphQL */ `
-  subscription OnDeleteStudentLocationInput {
-    onDeleteStudentLocationInput {
-      id
-      name
-      asOfDate
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const onCreateStudentStatus = /* GraphQL */ `
-  subscription OnCreateStudentStatus {
-    onCreateStudentStatus {
-      id
-      title
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const onUpdateStudentStatus = /* GraphQL */ `
-  subscription OnUpdateStudentStatus {
-    onUpdateStudentStatus {
-      id
-      title
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const onDeleteStudentStatus = /* GraphQL */ `
-  subscription OnDeleteStudentStatus {
-    onDeleteStudentStatus {
-      id
-      title
+      tasks {
+        items {
+          id
+          assignedDate
+          completed
+          completedDate
+          detail
+          document
+          dueDate
+          flag
+          studentID
+          userID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       createdAt
       updatedAt
     }
@@ -1431,8 +912,70 @@ export const onCreateTask = /* GraphQL */ `
       document
       dueDate
       flag
-      studentId
-      userId
+      studentID
+      student {
+        id
+        archiveStudent
+        dateOfBirth
+        docNum
+        fafsaReceived
+        firstName
+        lastName
+        newStudent
+        race
+        readyToAward
+        runwayCohort
+        sentToAccounting
+        ubbId
+        academicYearStatus {
+          financialAidStatus
+          studentStatus
+        }
+        gpa {
+          value
+          asOfDate
+        }
+        location {
+          name
+          asOfDate
+        }
+        classes {
+          nextToken
+        }
+        documents {
+          nextToken
+        }
+        notes {
+          nextToken
+        }
+        tasks {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      userID
+      user {
+        id
+        admin
+        avatar
+        email
+        color
+        firstName
+        lastName
+        token
+        notes {
+          nextToken
+        }
+        quickLinks {
+          nextToken
+        }
+        tasks {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
       createdAt
       updatedAt
     }
@@ -1449,8 +992,70 @@ export const onUpdateTask = /* GraphQL */ `
       document
       dueDate
       flag
-      studentId
-      userId
+      studentID
+      student {
+        id
+        archiveStudent
+        dateOfBirth
+        docNum
+        fafsaReceived
+        firstName
+        lastName
+        newStudent
+        race
+        readyToAward
+        runwayCohort
+        sentToAccounting
+        ubbId
+        academicYearStatus {
+          financialAidStatus
+          studentStatus
+        }
+        gpa {
+          value
+          asOfDate
+        }
+        location {
+          name
+          asOfDate
+        }
+        classes {
+          nextToken
+        }
+        documents {
+          nextToken
+        }
+        notes {
+          nextToken
+        }
+        tasks {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      userID
+      user {
+        id
+        admin
+        avatar
+        email
+        color
+        firstName
+        lastName
+        token
+        notes {
+          nextToken
+        }
+        quickLinks {
+          nextToken
+        }
+        tasks {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
       createdAt
       updatedAt
     }
@@ -1467,8 +1072,70 @@ export const onDeleteTask = /* GraphQL */ `
       document
       dueDate
       flag
-      studentId
-      userId
+      studentID
+      student {
+        id
+        archiveStudent
+        dateOfBirth
+        docNum
+        fafsaReceived
+        firstName
+        lastName
+        newStudent
+        race
+        readyToAward
+        runwayCohort
+        sentToAccounting
+        ubbId
+        academicYearStatus {
+          financialAidStatus
+          studentStatus
+        }
+        gpa {
+          value
+          asOfDate
+        }
+        location {
+          name
+          asOfDate
+        }
+        classes {
+          nextToken
+        }
+        documents {
+          nextToken
+        }
+        notes {
+          nextToken
+        }
+        tasks {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      userID
+      user {
+        id
+        admin
+        avatar
+        email
+        color
+        firstName
+        lastName
+        token
+        notes {
+          nextToken
+        }
+        quickLinks {
+          nextToken
+        }
+        tasks {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
       createdAt
       updatedAt
     }
@@ -1478,13 +1145,37 @@ export const onCreateUser = /* GraphQL */ `
   subscription OnCreateUser {
     onCreateUser {
       id
-      firstName
-      lastName
-      email
       admin
       avatar
+      email
       color
+      firstName
+      lastName
       token
+      notes {
+        items {
+          id
+          bookmark
+          createdDate
+          note
+          userID
+          studentID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      quickLinks {
+        items {
+          id
+          title
+          link
+          userID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       tasks {
         items {
           id
@@ -1495,8 +1186,8 @@ export const onCreateUser = /* GraphQL */ `
           document
           dueDate
           flag
-          studentId
-          userId
+          studentID
+          userID
           createdAt
           updatedAt
         }
@@ -1511,13 +1202,37 @@ export const onUpdateUser = /* GraphQL */ `
   subscription OnUpdateUser {
     onUpdateUser {
       id
-      firstName
-      lastName
-      email
       admin
       avatar
+      email
       color
+      firstName
+      lastName
       token
+      notes {
+        items {
+          id
+          bookmark
+          createdDate
+          note
+          userID
+          studentID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      quickLinks {
+        items {
+          id
+          title
+          link
+          userID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       tasks {
         items {
           id
@@ -1528,8 +1243,8 @@ export const onUpdateUser = /* GraphQL */ `
           document
           dueDate
           flag
-          studentId
-          userId
+          studentID
+          userID
           createdAt
           updatedAt
         }
@@ -1544,13 +1259,37 @@ export const onDeleteUser = /* GraphQL */ `
   subscription OnDeleteUser {
     onDeleteUser {
       id
-      firstName
-      lastName
-      email
       admin
       avatar
+      email
       color
+      firstName
+      lastName
       token
+      notes {
+        items {
+          id
+          bookmark
+          createdDate
+          note
+          userID
+          studentID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      quickLinks {
+        items {
+          id
+          title
+          link
+          userID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       tasks {
         items {
           id
@@ -1561,8 +1300,8 @@ export const onDeleteUser = /* GraphQL */ `
           document
           dueDate
           flag
-          studentId
-          userId
+          studentID
+          userID
           createdAt
           updatedAt
         }

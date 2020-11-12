@@ -43,69 +43,6 @@ export const deleteTodo = /* GraphQL */ `
     }
   }
 `;
-export const createAcademicYearStatus = /* GraphQL */ `
-  mutation CreateAcademicYearStatus(
-    $input: CreateAcademicYearStatusInput!
-    $condition: ModelAcademicYearStatusConditionInput
-  ) {
-    createAcademicYearStatus(input: $input, condition: $condition) {
-      id
-      academicYear {
-        id
-        year
-        isActive
-        createdAt
-        updatedAt
-      }
-      financialAidStatus
-      studentStatus
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const updateAcademicYearStatus = /* GraphQL */ `
-  mutation UpdateAcademicYearStatus(
-    $input: UpdateAcademicYearStatusInput!
-    $condition: ModelAcademicYearStatusConditionInput
-  ) {
-    updateAcademicYearStatus(input: $input, condition: $condition) {
-      id
-      academicYear {
-        id
-        year
-        isActive
-        createdAt
-        updatedAt
-      }
-      financialAidStatus
-      studentStatus
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const deleteAcademicYearStatus = /* GraphQL */ `
-  mutation DeleteAcademicYearStatus(
-    $input: DeleteAcademicYearStatusInput!
-    $condition: ModelAcademicYearStatusConditionInput
-  ) {
-    deleteAcademicYearStatus(input: $input, condition: $condition) {
-      id
-      academicYear {
-        id
-        year
-        isActive
-        createdAt
-        updatedAt
-      }
-      financialAidStatus
-      studentStatus
-      createdAt
-      updatedAt
-    }
-  }
-`;
 export const createAcademicYear = /* GraphQL */ `
   mutation CreateAcademicYear(
     $input: CreateAcademicYearInput!
@@ -155,110 +92,26 @@ export const createClass = /* GraphQL */ `
   ) {
     createClass(input: $input, condition: $condition) {
       id
+      awarded
+      classNumber
+      className
+      fees
+      invoice
+      paid
+      paidDate
+      quarter
+      reimbursed
+      reimbursedDate
+      status
+      tuition
+      undetermined
+      voucher
+      studentID
+      academicID
       academicYear {
         id
         year
         isActive
-        createdAt
-        updatedAt
-      }
-      quarter
-      classNumber
-      className
-      status
-      tuition
-      fees
-      awarded
-      voucher
-      undetermined
-      invoice
-      paid
-      paidDate
-      reimbursed
-      reimbursedDate
-      student {
-        id
-        firstName
-        lastName
-        dateOfBirth
-        ubbId
-        docNum
-        location {
-          id
-          name
-          asOfDate
-          createdAt
-          updatedAt
-        }
-        runwayCohort
-        gpa {
-          id
-          value
-          asOfDate
-          createdAt
-          updatedAt
-        }
-        race
-        fafsaReceived
-        sentToAccounting
-        readyToAward
-        newStudent
-        archiveStudent
-        academicYearStatus {
-          id
-          financialAidStatus
-          studentStatus
-          createdAt
-          updatedAt
-        }
-        classes {
-          id
-          quarter
-          classNumber
-          className
-          status
-          tuition
-          fees
-          awarded
-          voucher
-          undetermined
-          invoice
-          paid
-          paidDate
-          reimbursed
-          reimbursedDate
-          createdAt
-          updatedAt
-        }
-        documents {
-          id
-          title
-          link
-          createdAt
-          updatedAt
-        }
-        tasks {
-          id
-          assignedDate
-          completed
-          completedDate
-          detail
-          document
-          dueDate
-          flag
-          studentId
-          userId
-          createdAt
-          updatedAt
-        }
-        notes {
-          id
-          note
-          createdDate
-          bookmark
-          createdAt
-          updatedAt
-        }
         createdAt
         updatedAt
       }
@@ -274,110 +127,26 @@ export const updateClass = /* GraphQL */ `
   ) {
     updateClass(input: $input, condition: $condition) {
       id
+      awarded
+      classNumber
+      className
+      fees
+      invoice
+      paid
+      paidDate
+      quarter
+      reimbursed
+      reimbursedDate
+      status
+      tuition
+      undetermined
+      voucher
+      studentID
+      academicID
       academicYear {
         id
         year
         isActive
-        createdAt
-        updatedAt
-      }
-      quarter
-      classNumber
-      className
-      status
-      tuition
-      fees
-      awarded
-      voucher
-      undetermined
-      invoice
-      paid
-      paidDate
-      reimbursed
-      reimbursedDate
-      student {
-        id
-        firstName
-        lastName
-        dateOfBirth
-        ubbId
-        docNum
-        location {
-          id
-          name
-          asOfDate
-          createdAt
-          updatedAt
-        }
-        runwayCohort
-        gpa {
-          id
-          value
-          asOfDate
-          createdAt
-          updatedAt
-        }
-        race
-        fafsaReceived
-        sentToAccounting
-        readyToAward
-        newStudent
-        archiveStudent
-        academicYearStatus {
-          id
-          financialAidStatus
-          studentStatus
-          createdAt
-          updatedAt
-        }
-        classes {
-          id
-          quarter
-          classNumber
-          className
-          status
-          tuition
-          fees
-          awarded
-          voucher
-          undetermined
-          invoice
-          paid
-          paidDate
-          reimbursed
-          reimbursedDate
-          createdAt
-          updatedAt
-        }
-        documents {
-          id
-          title
-          link
-          createdAt
-          updatedAt
-        }
-        tasks {
-          id
-          assignedDate
-          completed
-          completedDate
-          detail
-          document
-          dueDate
-          flag
-          studentId
-          userId
-          createdAt
-          updatedAt
-        }
-        notes {
-          id
-          note
-          createdDate
-          bookmark
-          createdAt
-          updatedAt
-        }
         createdAt
         updatedAt
       }
@@ -393,110 +162,26 @@ export const deleteClass = /* GraphQL */ `
   ) {
     deleteClass(input: $input, condition: $condition) {
       id
+      awarded
+      classNumber
+      className
+      fees
+      invoice
+      paid
+      paidDate
+      quarter
+      reimbursed
+      reimbursedDate
+      status
+      tuition
+      undetermined
+      voucher
+      studentID
+      academicID
       academicYear {
         id
         year
         isActive
-        createdAt
-        updatedAt
-      }
-      quarter
-      classNumber
-      className
-      status
-      tuition
-      fees
-      awarded
-      voucher
-      undetermined
-      invoice
-      paid
-      paidDate
-      reimbursed
-      reimbursedDate
-      student {
-        id
-        firstName
-        lastName
-        dateOfBirth
-        ubbId
-        docNum
-        location {
-          id
-          name
-          asOfDate
-          createdAt
-          updatedAt
-        }
-        runwayCohort
-        gpa {
-          id
-          value
-          asOfDate
-          createdAt
-          updatedAt
-        }
-        race
-        fafsaReceived
-        sentToAccounting
-        readyToAward
-        newStudent
-        archiveStudent
-        academicYearStatus {
-          id
-          financialAidStatus
-          studentStatus
-          createdAt
-          updatedAt
-        }
-        classes {
-          id
-          quarter
-          classNumber
-          className
-          status
-          tuition
-          fees
-          awarded
-          voucher
-          undetermined
-          invoice
-          paid
-          paidDate
-          reimbursed
-          reimbursedDate
-          createdAt
-          updatedAt
-        }
-        documents {
-          id
-          title
-          link
-          createdAt
-          updatedAt
-        }
-        tasks {
-          id
-          assignedDate
-          completed
-          completedDate
-          detail
-          document
-          dueDate
-          flag
-          studentId
-          userId
-          createdAt
-          updatedAt
-        }
-        notes {
-          id
-          note
-          createdDate
-          bookmark
-          createdAt
-          updatedAt
-        }
         createdAt
         updatedAt
       }
@@ -512,90 +197,46 @@ export const createDocument = /* GraphQL */ `
   ) {
     createDocument(input: $input, condition: $condition) {
       id
-      title
       link
+      title
+      studentID
       student {
         id
+        archiveStudent
+        dateOfBirth
+        docNum
+        fafsaReceived
         firstName
         lastName
-        dateOfBirth
-        ubbId
-        docNum
-        location {
-          id
-          name
-          asOfDate
-          createdAt
-          updatedAt
-        }
-        runwayCohort
-        gpa {
-          id
-          value
-          asOfDate
-          createdAt
-          updatedAt
-        }
-        race
-        fafsaReceived
-        sentToAccounting
-        readyToAward
         newStudent
-        archiveStudent
+        race
+        readyToAward
+        runwayCohort
+        sentToAccounting
+        ubbId
         academicYearStatus {
-          id
           financialAidStatus
           studentStatus
-          createdAt
-          updatedAt
+        }
+        gpa {
+          value
+          asOfDate
+        }
+        location {
+          name
+          asOfDate
         }
         classes {
-          id
-          quarter
-          classNumber
-          className
-          status
-          tuition
-          fees
-          awarded
-          voucher
-          undetermined
-          invoice
-          paid
-          paidDate
-          reimbursed
-          reimbursedDate
-          createdAt
-          updatedAt
+          nextToken
         }
         documents {
-          id
-          title
-          link
-          createdAt
-          updatedAt
-        }
-        tasks {
-          id
-          assignedDate
-          completed
-          completedDate
-          detail
-          document
-          dueDate
-          flag
-          studentId
-          userId
-          createdAt
-          updatedAt
+          nextToken
         }
         notes {
-          id
-          note
-          createdDate
-          bookmark
-          createdAt
-          updatedAt
+          nextToken
+        }
+        tasks {
+          nextToken
         }
         createdAt
         updatedAt
@@ -612,90 +253,46 @@ export const updateDocument = /* GraphQL */ `
   ) {
     updateDocument(input: $input, condition: $condition) {
       id
-      title
       link
+      title
+      studentID
       student {
         id
+        archiveStudent
+        dateOfBirth
+        docNum
+        fafsaReceived
         firstName
         lastName
-        dateOfBirth
-        ubbId
-        docNum
-        location {
-          id
-          name
-          asOfDate
-          createdAt
-          updatedAt
-        }
-        runwayCohort
-        gpa {
-          id
-          value
-          asOfDate
-          createdAt
-          updatedAt
-        }
-        race
-        fafsaReceived
-        sentToAccounting
-        readyToAward
         newStudent
-        archiveStudent
+        race
+        readyToAward
+        runwayCohort
+        sentToAccounting
+        ubbId
         academicYearStatus {
-          id
           financialAidStatus
           studentStatus
-          createdAt
-          updatedAt
+        }
+        gpa {
+          value
+          asOfDate
+        }
+        location {
+          name
+          asOfDate
         }
         classes {
-          id
-          quarter
-          classNumber
-          className
-          status
-          tuition
-          fees
-          awarded
-          voucher
-          undetermined
-          invoice
-          paid
-          paidDate
-          reimbursed
-          reimbursedDate
-          createdAt
-          updatedAt
+          nextToken
         }
         documents {
-          id
-          title
-          link
-          createdAt
-          updatedAt
-        }
-        tasks {
-          id
-          assignedDate
-          completed
-          completedDate
-          detail
-          document
-          dueDate
-          flag
-          studentId
-          userId
-          createdAt
-          updatedAt
+          nextToken
         }
         notes {
-          id
-          note
-          createdDate
-          bookmark
-          createdAt
-          updatedAt
+          nextToken
+        }
+        tasks {
+          nextToken
         }
         createdAt
         updatedAt
@@ -712,90 +309,46 @@ export const deleteDocument = /* GraphQL */ `
   ) {
     deleteDocument(input: $input, condition: $condition) {
       id
-      title
       link
+      title
+      studentID
       student {
         id
+        archiveStudent
+        dateOfBirth
+        docNum
+        fafsaReceived
         firstName
         lastName
-        dateOfBirth
-        ubbId
-        docNum
-        location {
-          id
-          name
-          asOfDate
-          createdAt
-          updatedAt
-        }
-        runwayCohort
-        gpa {
-          id
-          value
-          asOfDate
-          createdAt
-          updatedAt
-        }
-        race
-        fafsaReceived
-        sentToAccounting
-        readyToAward
         newStudent
-        archiveStudent
+        race
+        readyToAward
+        runwayCohort
+        sentToAccounting
+        ubbId
         academicYearStatus {
-          id
           financialAidStatus
           studentStatus
-          createdAt
-          updatedAt
+        }
+        gpa {
+          value
+          asOfDate
+        }
+        location {
+          name
+          asOfDate
         }
         classes {
-          id
-          quarter
-          classNumber
-          className
-          status
-          tuition
-          fees
-          awarded
-          voucher
-          undetermined
-          invoice
-          paid
-          paidDate
-          reimbursed
-          reimbursedDate
-          createdAt
-          updatedAt
+          nextToken
         }
         documents {
-          id
-          title
-          link
-          createdAt
-          updatedAt
-        }
-        tasks {
-          id
-          assignedDate
-          completed
-          completedDate
-          detail
-          document
-          dueDate
-          flag
-          studentId
-          userId
-          createdAt
-          updatedAt
+          nextToken
         }
         notes {
-          id
-          note
-          createdDate
-          bookmark
-          createdAt
-          updatedAt
+          nextToken
+        }
+        tasks {
+          nextToken
         }
         createdAt
         updatedAt
@@ -812,24 +365,73 @@ export const createNote = /* GraphQL */ `
   ) {
     createNote(input: $input, condition: $condition) {
       id
+      bookmark
+      createdDate
+      note
+      userID
+      studentID
       user {
         id
-        firstName
-        lastName
-        email
         admin
         avatar
+        email
         color
+        firstName
+        lastName
         token
+        notes {
+          nextToken
+        }
+        quickLinks {
+          nextToken
+        }
         tasks {
           nextToken
         }
         createdAt
         updatedAt
       }
-      note
-      createdDate
-      bookmark
+      student {
+        id
+        archiveStudent
+        dateOfBirth
+        docNum
+        fafsaReceived
+        firstName
+        lastName
+        newStudent
+        race
+        readyToAward
+        runwayCohort
+        sentToAccounting
+        ubbId
+        academicYearStatus {
+          financialAidStatus
+          studentStatus
+        }
+        gpa {
+          value
+          asOfDate
+        }
+        location {
+          name
+          asOfDate
+        }
+        classes {
+          nextToken
+        }
+        documents {
+          nextToken
+        }
+        notes {
+          nextToken
+        }
+        tasks {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
       createdAt
       updatedAt
     }
@@ -842,24 +444,73 @@ export const updateNote = /* GraphQL */ `
   ) {
     updateNote(input: $input, condition: $condition) {
       id
+      bookmark
+      createdDate
+      note
+      userID
+      studentID
       user {
         id
-        firstName
-        lastName
-        email
         admin
         avatar
+        email
         color
+        firstName
+        lastName
         token
+        notes {
+          nextToken
+        }
+        quickLinks {
+          nextToken
+        }
         tasks {
           nextToken
         }
         createdAt
         updatedAt
       }
-      note
-      createdDate
-      bookmark
+      student {
+        id
+        archiveStudent
+        dateOfBirth
+        docNum
+        fafsaReceived
+        firstName
+        lastName
+        newStudent
+        race
+        readyToAward
+        runwayCohort
+        sentToAccounting
+        ubbId
+        academicYearStatus {
+          financialAidStatus
+          studentStatus
+        }
+        gpa {
+          value
+          asOfDate
+        }
+        location {
+          name
+          asOfDate
+        }
+        classes {
+          nextToken
+        }
+        documents {
+          nextToken
+        }
+        notes {
+          nextToken
+        }
+        tasks {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
       createdAt
       updatedAt
     }
@@ -872,24 +523,73 @@ export const deleteNote = /* GraphQL */ `
   ) {
     deleteNote(input: $input, condition: $condition) {
       id
+      bookmark
+      createdDate
+      note
+      userID
+      studentID
       user {
         id
-        firstName
-        lastName
-        email
         admin
         avatar
+        email
         color
+        firstName
+        lastName
         token
+        notes {
+          nextToken
+        }
+        quickLinks {
+          nextToken
+        }
         tasks {
           nextToken
         }
         createdAt
         updatedAt
       }
-      note
-      createdDate
-      bookmark
+      student {
+        id
+        archiveStudent
+        dateOfBirth
+        docNum
+        fafsaReceived
+        firstName
+        lastName
+        newStudent
+        race
+        readyToAward
+        runwayCohort
+        sentToAccounting
+        ubbId
+        academicYearStatus {
+          financialAidStatus
+          studentStatus
+        }
+        gpa {
+          value
+          asOfDate
+        }
+        location {
+          name
+          asOfDate
+        }
+        classes {
+          nextToken
+        }
+        documents {
+          nextToken
+        }
+        notes {
+          nextToken
+        }
+        tasks {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
       createdAt
       updatedAt
     }
@@ -904,6 +604,7 @@ export const createQuickLink = /* GraphQL */ `
       id
       title
       link
+      userID
       createdAt
       updatedAt
     }
@@ -918,6 +619,7 @@ export const updateQuickLink = /* GraphQL */ `
       id
       title
       link
+      userID
       createdAt
       updatedAt
     }
@@ -932,6 +634,7 @@ export const deleteQuickLink = /* GraphQL */ `
       id
       title
       link
+      userID
       createdAt
       updatedAt
     }
@@ -944,34 +647,19 @@ export const createStudent = /* GraphQL */ `
   ) {
     createStudent(input: $input, condition: $condition) {
       id
+      archiveStudent
+      dateOfBirth
+      docNum
+      fafsaReceived
       firstName
       lastName
-      dateOfBirth
-      ubbId
-      docNum
-      location {
-        id
-        name
-        asOfDate
-        createdAt
-        updatedAt
-      }
-      runwayCohort
-      gpa {
-        id
-        value
-        asOfDate
-        createdAt
-        updatedAt
-      }
-      race
-      fafsaReceived
-      sentToAccounting
-      readyToAward
       newStudent
-      archiveStudent
+      race
+      readyToAward
+      runwayCohort
+      sentToAccounting
+      ubbId
       academicYearStatus {
-        id
         academicYear {
           id
           year
@@ -981,109 +669,79 @@ export const createStudent = /* GraphQL */ `
         }
         financialAidStatus
         studentStatus
-        createdAt
-        updatedAt
+      }
+      gpa {
+        value
+        asOfDate
+      }
+      location {
+        name
+        asOfDate
       }
       classes {
-        id
-        academicYear {
+        items {
           id
-          year
-          isActive
+          awarded
+          classNumber
+          className
+          fees
+          invoice
+          paid
+          paidDate
+          quarter
+          reimbursed
+          reimbursedDate
+          status
+          tuition
+          undetermined
+          voucher
+          studentID
+          academicID
           createdAt
           updatedAt
         }
-        quarter
-        classNumber
-        className
-        status
-        tuition
-        fees
-        awarded
-        voucher
-        undetermined
-        invoice
-        paid
-        paidDate
-        reimbursed
-        reimbursedDate
-        student {
-          id
-          firstName
-          lastName
-          dateOfBirth
-          ubbId
-          docNum
-          runwayCohort
-          race
-          fafsaReceived
-          sentToAccounting
-          readyToAward
-          newStudent
-          archiveStudent
-          createdAt
-          updatedAt
-        }
-        createdAt
-        updatedAt
+        nextToken
       }
       documents {
-        id
-        title
-        link
-        student {
+        items {
           id
-          firstName
-          lastName
-          dateOfBirth
-          ubbId
-          docNum
-          runwayCohort
-          race
-          fafsaReceived
-          sentToAccounting
-          readyToAward
-          newStudent
-          archiveStudent
+          link
+          title
+          studentID
           createdAt
           updatedAt
         }
-        createdAt
-        updatedAt
-      }
-      tasks {
-        id
-        assignedDate
-        completed
-        completedDate
-        detail
-        document
-        dueDate
-        flag
-        studentId
-        userId
-        createdAt
-        updatedAt
+        nextToken
       }
       notes {
-        id
-        user {
+        items {
           id
-          firstName
-          lastName
-          email
-          admin
-          avatar
-          color
-          token
+          bookmark
+          createdDate
+          note
+          userID
+          studentID
           createdAt
           updatedAt
         }
-        note
-        createdDate
-        bookmark
-        createdAt
-        updatedAt
+        nextToken
+      }
+      tasks {
+        items {
+          id
+          assignedDate
+          completed
+          completedDate
+          detail
+          document
+          dueDate
+          flag
+          studentID
+          userID
+          createdAt
+          updatedAt
+        }
+        nextToken
       }
       createdAt
       updatedAt
@@ -1097,34 +755,19 @@ export const updateStudent = /* GraphQL */ `
   ) {
     updateStudent(input: $input, condition: $condition) {
       id
+      archiveStudent
+      dateOfBirth
+      docNum
+      fafsaReceived
       firstName
       lastName
-      dateOfBirth
-      ubbId
-      docNum
-      location {
-        id
-        name
-        asOfDate
-        createdAt
-        updatedAt
-      }
-      runwayCohort
-      gpa {
-        id
-        value
-        asOfDate
-        createdAt
-        updatedAt
-      }
-      race
-      fafsaReceived
-      sentToAccounting
-      readyToAward
       newStudent
-      archiveStudent
+      race
+      readyToAward
+      runwayCohort
+      sentToAccounting
+      ubbId
       academicYearStatus {
-        id
         academicYear {
           id
           year
@@ -1134,109 +777,79 @@ export const updateStudent = /* GraphQL */ `
         }
         financialAidStatus
         studentStatus
-        createdAt
-        updatedAt
+      }
+      gpa {
+        value
+        asOfDate
+      }
+      location {
+        name
+        asOfDate
       }
       classes {
-        id
-        academicYear {
+        items {
           id
-          year
-          isActive
+          awarded
+          classNumber
+          className
+          fees
+          invoice
+          paid
+          paidDate
+          quarter
+          reimbursed
+          reimbursedDate
+          status
+          tuition
+          undetermined
+          voucher
+          studentID
+          academicID
           createdAt
           updatedAt
         }
-        quarter
-        classNumber
-        className
-        status
-        tuition
-        fees
-        awarded
-        voucher
-        undetermined
-        invoice
-        paid
-        paidDate
-        reimbursed
-        reimbursedDate
-        student {
-          id
-          firstName
-          lastName
-          dateOfBirth
-          ubbId
-          docNum
-          runwayCohort
-          race
-          fafsaReceived
-          sentToAccounting
-          readyToAward
-          newStudent
-          archiveStudent
-          createdAt
-          updatedAt
-        }
-        createdAt
-        updatedAt
+        nextToken
       }
       documents {
-        id
-        title
-        link
-        student {
+        items {
           id
-          firstName
-          lastName
-          dateOfBirth
-          ubbId
-          docNum
-          runwayCohort
-          race
-          fafsaReceived
-          sentToAccounting
-          readyToAward
-          newStudent
-          archiveStudent
+          link
+          title
+          studentID
           createdAt
           updatedAt
         }
-        createdAt
-        updatedAt
-      }
-      tasks {
-        id
-        assignedDate
-        completed
-        completedDate
-        detail
-        document
-        dueDate
-        flag
-        studentId
-        userId
-        createdAt
-        updatedAt
+        nextToken
       }
       notes {
-        id
-        user {
+        items {
           id
-          firstName
-          lastName
-          email
-          admin
-          avatar
-          color
-          token
+          bookmark
+          createdDate
+          note
+          userID
+          studentID
           createdAt
           updatedAt
         }
-        note
-        createdDate
-        bookmark
-        createdAt
-        updatedAt
+        nextToken
+      }
+      tasks {
+        items {
+          id
+          assignedDate
+          completed
+          completedDate
+          detail
+          document
+          dueDate
+          flag
+          studentID
+          userID
+          createdAt
+          updatedAt
+        }
+        nextToken
       }
       createdAt
       updatedAt
@@ -1250,34 +863,19 @@ export const deleteStudent = /* GraphQL */ `
   ) {
     deleteStudent(input: $input, condition: $condition) {
       id
+      archiveStudent
+      dateOfBirth
+      docNum
+      fafsaReceived
       firstName
       lastName
-      dateOfBirth
-      ubbId
-      docNum
-      location {
-        id
-        name
-        asOfDate
-        createdAt
-        updatedAt
-      }
-      runwayCohort
-      gpa {
-        id
-        value
-        asOfDate
-        createdAt
-        updatedAt
-      }
-      race
-      fafsaReceived
-      sentToAccounting
-      readyToAward
       newStudent
-      archiveStudent
+      race
+      readyToAward
+      runwayCohort
+      sentToAccounting
+      ubbId
       academicYearStatus {
-        id
         academicYear {
           id
           year
@@ -1287,233 +885,80 @@ export const deleteStudent = /* GraphQL */ `
         }
         financialAidStatus
         studentStatus
-        createdAt
-        updatedAt
+      }
+      gpa {
+        value
+        asOfDate
+      }
+      location {
+        name
+        asOfDate
       }
       classes {
-        id
-        academicYear {
+        items {
           id
-          year
-          isActive
+          awarded
+          classNumber
+          className
+          fees
+          invoice
+          paid
+          paidDate
+          quarter
+          reimbursed
+          reimbursedDate
+          status
+          tuition
+          undetermined
+          voucher
+          studentID
+          academicID
           createdAt
           updatedAt
         }
-        quarter
-        classNumber
-        className
-        status
-        tuition
-        fees
-        awarded
-        voucher
-        undetermined
-        invoice
-        paid
-        paidDate
-        reimbursed
-        reimbursedDate
-        student {
-          id
-          firstName
-          lastName
-          dateOfBirth
-          ubbId
-          docNum
-          runwayCohort
-          race
-          fafsaReceived
-          sentToAccounting
-          readyToAward
-          newStudent
-          archiveStudent
-          createdAt
-          updatedAt
-        }
-        createdAt
-        updatedAt
+        nextToken
       }
       documents {
-        id
-        title
-        link
-        student {
+        items {
           id
-          firstName
-          lastName
-          dateOfBirth
-          ubbId
-          docNum
-          runwayCohort
-          race
-          fafsaReceived
-          sentToAccounting
-          readyToAward
-          newStudent
-          archiveStudent
+          link
+          title
+          studentID
           createdAt
           updatedAt
         }
-        createdAt
-        updatedAt
-      }
-      tasks {
-        id
-        assignedDate
-        completed
-        completedDate
-        detail
-        document
-        dueDate
-        flag
-        studentId
-        userId
-        createdAt
-        updatedAt
+        nextToken
       }
       notes {
-        id
-        user {
+        items {
           id
-          firstName
-          lastName
-          email
-          admin
-          avatar
-          color
-          token
+          bookmark
+          createdDate
+          note
+          userID
+          studentID
           createdAt
           updatedAt
         }
-        note
-        createdDate
-        bookmark
-        createdAt
-        updatedAt
+        nextToken
       }
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const createStudentGpaInput = /* GraphQL */ `
-  mutation CreateStudentGpaInput(
-    $input: CreateStudentGpaInputInput!
-    $condition: ModelStudentGpaInputConditionInput
-  ) {
-    createStudentGpaInput(input: $input, condition: $condition) {
-      id
-      value
-      asOfDate
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const updateStudentGpaInput = /* GraphQL */ `
-  mutation UpdateStudentGpaInput(
-    $input: UpdateStudentGpaInputInput!
-    $condition: ModelStudentGpaInputConditionInput
-  ) {
-    updateStudentGpaInput(input: $input, condition: $condition) {
-      id
-      value
-      asOfDate
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const deleteStudentGpaInput = /* GraphQL */ `
-  mutation DeleteStudentGpaInput(
-    $input: DeleteStudentGpaInputInput!
-    $condition: ModelStudentGpaInputConditionInput
-  ) {
-    deleteStudentGpaInput(input: $input, condition: $condition) {
-      id
-      value
-      asOfDate
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const createStudentLocationInput = /* GraphQL */ `
-  mutation CreateStudentLocationInput(
-    $input: CreateStudentLocationInputInput!
-    $condition: ModelStudentLocationInputConditionInput
-  ) {
-    createStudentLocationInput(input: $input, condition: $condition) {
-      id
-      name
-      asOfDate
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const updateStudentLocationInput = /* GraphQL */ `
-  mutation UpdateStudentLocationInput(
-    $input: UpdateStudentLocationInputInput!
-    $condition: ModelStudentLocationInputConditionInput
-  ) {
-    updateStudentLocationInput(input: $input, condition: $condition) {
-      id
-      name
-      asOfDate
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const deleteStudentLocationInput = /* GraphQL */ `
-  mutation DeleteStudentLocationInput(
-    $input: DeleteStudentLocationInputInput!
-    $condition: ModelStudentLocationInputConditionInput
-  ) {
-    deleteStudentLocationInput(input: $input, condition: $condition) {
-      id
-      name
-      asOfDate
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const createStudentStatus = /* GraphQL */ `
-  mutation CreateStudentStatus(
-    $input: CreateStudentStatusInput!
-    $condition: ModelStudentStatusConditionInput
-  ) {
-    createStudentStatus(input: $input, condition: $condition) {
-      id
-      title
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const updateStudentStatus = /* GraphQL */ `
-  mutation UpdateStudentStatus(
-    $input: UpdateStudentStatusInput!
-    $condition: ModelStudentStatusConditionInput
-  ) {
-    updateStudentStatus(input: $input, condition: $condition) {
-      id
-      title
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const deleteStudentStatus = /* GraphQL */ `
-  mutation DeleteStudentStatus(
-    $input: DeleteStudentStatusInput!
-    $condition: ModelStudentStatusConditionInput
-  ) {
-    deleteStudentStatus(input: $input, condition: $condition) {
-      id
-      title
+      tasks {
+        items {
+          id
+          assignedDate
+          completed
+          completedDate
+          detail
+          document
+          dueDate
+          flag
+          studentID
+          userID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       createdAt
       updatedAt
     }
@@ -1533,8 +978,70 @@ export const createTask = /* GraphQL */ `
       document
       dueDate
       flag
-      studentId
-      userId
+      studentID
+      student {
+        id
+        archiveStudent
+        dateOfBirth
+        docNum
+        fafsaReceived
+        firstName
+        lastName
+        newStudent
+        race
+        readyToAward
+        runwayCohort
+        sentToAccounting
+        ubbId
+        academicYearStatus {
+          financialAidStatus
+          studentStatus
+        }
+        gpa {
+          value
+          asOfDate
+        }
+        location {
+          name
+          asOfDate
+        }
+        classes {
+          nextToken
+        }
+        documents {
+          nextToken
+        }
+        notes {
+          nextToken
+        }
+        tasks {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      userID
+      user {
+        id
+        admin
+        avatar
+        email
+        color
+        firstName
+        lastName
+        token
+        notes {
+          nextToken
+        }
+        quickLinks {
+          nextToken
+        }
+        tasks {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
       createdAt
       updatedAt
     }
@@ -1554,8 +1061,70 @@ export const updateTask = /* GraphQL */ `
       document
       dueDate
       flag
-      studentId
-      userId
+      studentID
+      student {
+        id
+        archiveStudent
+        dateOfBirth
+        docNum
+        fafsaReceived
+        firstName
+        lastName
+        newStudent
+        race
+        readyToAward
+        runwayCohort
+        sentToAccounting
+        ubbId
+        academicYearStatus {
+          financialAidStatus
+          studentStatus
+        }
+        gpa {
+          value
+          asOfDate
+        }
+        location {
+          name
+          asOfDate
+        }
+        classes {
+          nextToken
+        }
+        documents {
+          nextToken
+        }
+        notes {
+          nextToken
+        }
+        tasks {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      userID
+      user {
+        id
+        admin
+        avatar
+        email
+        color
+        firstName
+        lastName
+        token
+        notes {
+          nextToken
+        }
+        quickLinks {
+          nextToken
+        }
+        tasks {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
       createdAt
       updatedAt
     }
@@ -1575,8 +1144,70 @@ export const deleteTask = /* GraphQL */ `
       document
       dueDate
       flag
-      studentId
-      userId
+      studentID
+      student {
+        id
+        archiveStudent
+        dateOfBirth
+        docNum
+        fafsaReceived
+        firstName
+        lastName
+        newStudent
+        race
+        readyToAward
+        runwayCohort
+        sentToAccounting
+        ubbId
+        academicYearStatus {
+          financialAidStatus
+          studentStatus
+        }
+        gpa {
+          value
+          asOfDate
+        }
+        location {
+          name
+          asOfDate
+        }
+        classes {
+          nextToken
+        }
+        documents {
+          nextToken
+        }
+        notes {
+          nextToken
+        }
+        tasks {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      userID
+      user {
+        id
+        admin
+        avatar
+        email
+        color
+        firstName
+        lastName
+        token
+        notes {
+          nextToken
+        }
+        quickLinks {
+          nextToken
+        }
+        tasks {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
       createdAt
       updatedAt
     }
@@ -1589,13 +1220,37 @@ export const createUser = /* GraphQL */ `
   ) {
     createUser(input: $input, condition: $condition) {
       id
-      firstName
-      lastName
-      email
       admin
       avatar
+      email
       color
+      firstName
+      lastName
       token
+      notes {
+        items {
+          id
+          bookmark
+          createdDate
+          note
+          userID
+          studentID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      quickLinks {
+        items {
+          id
+          title
+          link
+          userID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       tasks {
         items {
           id
@@ -1606,8 +1261,8 @@ export const createUser = /* GraphQL */ `
           document
           dueDate
           flag
-          studentId
-          userId
+          studentID
+          userID
           createdAt
           updatedAt
         }
@@ -1625,13 +1280,37 @@ export const updateUser = /* GraphQL */ `
   ) {
     updateUser(input: $input, condition: $condition) {
       id
-      firstName
-      lastName
-      email
       admin
       avatar
+      email
       color
+      firstName
+      lastName
       token
+      notes {
+        items {
+          id
+          bookmark
+          createdDate
+          note
+          userID
+          studentID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      quickLinks {
+        items {
+          id
+          title
+          link
+          userID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       tasks {
         items {
           id
@@ -1642,8 +1321,8 @@ export const updateUser = /* GraphQL */ `
           document
           dueDate
           flag
-          studentId
-          userId
+          studentID
+          userID
           createdAt
           updatedAt
         }
@@ -1661,13 +1340,37 @@ export const deleteUser = /* GraphQL */ `
   ) {
     deleteUser(input: $input, condition: $condition) {
       id
-      firstName
-      lastName
-      email
       admin
       avatar
+      email
       color
+      firstName
+      lastName
       token
+      notes {
+        items {
+          id
+          bookmark
+          createdDate
+          note
+          userID
+          studentID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      quickLinks {
+        items {
+          id
+          title
+          link
+          userID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       tasks {
         items {
           id
@@ -1678,8 +1381,8 @@ export const deleteUser = /* GraphQL */ `
           document
           dueDate
           flag
-          studentId
-          userId
+          studentID
+          userID
           createdAt
           updatedAt
         }

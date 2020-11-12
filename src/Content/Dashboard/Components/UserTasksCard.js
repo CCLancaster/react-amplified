@@ -114,6 +114,10 @@ const UserTasksCard = props => {
             const usersQueryData = await API.graphql(graphqlOperation(listUsers))
             const studentsData = await API.graphql(graphqlOperation(listStudents)) // Add a filter for current students
             
+            console.log("usersQueryData: ", usersQueryData)
+            console.log("usersQueryData.data.listUsers.items[0].id: ", usersQueryData.data.listUsers.items[0].id)
+            console.log("studentsData: ", studentsData)
+
             // Create the Lists
             setUsersList(usersQueryData.data.listUsers.items.map(user => { 
                 return <option key={user.id} value={user.id}>{user.firstName} {user.lastName} </option> 
@@ -142,8 +146,8 @@ const UserTasksCard = props => {
             document:       addDoc, //String; the "chips"
             dueDate:        dateDue, //Date, as a string
             flag:           flag, //Boolean
-            userId:         teamMember, //ID
-            studentId:      studentId, //ID
+            userID:         teamMember, //ID
+            studentID:      studentId, //ID
         }
         addTask(taskInput)
         setShowPopUp(false)
@@ -254,31 +258,31 @@ const UserTasksCard = props => {
 
 let columnsForTable = [
     {
-        Header: function(){<h3 className="my_custom_class"><FlagOutlined style={{height: 30, width: 30}} /> </h3>},
+        Header:()=><h3 className="my_custom_class"><FlagOutlined style={{height: 30, width: 30}} /> </h3>,
         accessor: 'flag'
     },
     {
-        Header:function(){<h3 className="my_custom_class">Last Name </h3>},
+        Header:()=><h3 className="my_custom_class">Last Name </h3>,
         accessor: 'lastName'
     },
     {
-        Header:function(){<h3 className="my_custom_class">First Name </h3>},
+        Header:()=><h3 className="my_custom_class">First Name </h3>,
         accessor: 'firstName'
     },
     {
-        Header:function(){<h3 className="my_custom_class">Student ID </h3>},
+        Header:()=><h3 className="my_custom_class">Student ID </h3>,
         accessor: 'ubbId'
     },
     {
-        Header:function(){<h3 className="my_custom_class">Document </h3>},
+        Header:()=><h3 className="my_custom_class">Document </h3>,
         accessor: 'document'
     },
     {
-        Header:function(){<h3 className="my_custom_class">Due <ExpandMoreIcon fontSize="small" /></h3>},
+        Header:()=><h3 className="my_custom_class">Due <ExpandMoreIcon fontSize="small" /></h3>,
         accessor: 'dueDate'
     },
     {
-        Header:function(){<h3 className="my_custom_class">Task in Detail </h3>},
+        Header:()=><h3 className="my_custom_class">Task in Detail </h3>,
         accessor: 'detail'
     }
 ]
